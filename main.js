@@ -11,6 +11,14 @@ class lineChart{
 
 
     drawChart(){
+
+        try{
+            this.checkConstraints();
+        }catch(e){
+            console.error(e);
+            return;
+        }
+
         // create 'n' intervals
         for(let i = 0; i < this.intervalsNb; i++){
             if(i == 0){
@@ -200,6 +208,56 @@ class lineChart{
         
     }
 
+
+
+
+    /**
+     * Validate the rules for drawing the chart
+     * Rules:
+     *  1. no negative values in x
+     *  2. x & y values should be equal
+     *  3. distance between two y points should be equal
+     * 
+     * 
+     * @throws Error
+     */
+    checkConstraints(){
+        this.xValuesConstraints(this.config.x.values);
+        if(this.config.x.values.length !== this.config.y.values.length) throw new Error("X & Y should be equal in length");
+        this.distanceConstraint(this.config.y.values);
+    }
+
+
+    /**
+     * Validate x-axis values constraints (no negative values allowed)
+     * 
+     * 
+     * @param {arr} values
+     * @throws TypeError 
+     */
+    xValuesConstraints(values){
+        values.forEach(value => {
+            if(typeof(value) !== 'string') throw new TypeError("X-axis values should be non-numeric.");
+        });
+        
+    }
+
+
+
+    /**
+     * @param {arr} values
+     * @throws Error 
+     */
+    distanceConstraint(values){
+        let distance = values[1] - values[0];
+        for(let i = 0; i < values.length - 1; i++){
+            if((values[i + 1] - values[i]) !== distance) throw new Error("distance between two points should be equal");
+        }
+    }
+
+
+
+
     /**
      * Determine the exact vertical position of a given point
      * 
@@ -208,6 +266,10 @@ class lineChart{
      * @returns 
      */
     inputPosition(pointY, intervalHeight, intervalMeasure){
+        // Negative Point
+        if(pointY < 0){
+            throw new RangeError("Negative values are not supported, yet");
+        }
         return ((intervalHeight * pointY) / intervalMeasure);
     }
 }
