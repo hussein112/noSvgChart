@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.charts-container{
+    padding: 50px;
+    margin: auto;
+
+    width: 700px;
+    height: 700px;
+}
+
+
+.graph{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+}
+
+
+
+.graph > .title{
+    position: absolute;
+    text-transform: uppercase;
+    left: 50%;
+    top: -9%;
+    translate: -50% 9%;
+    font-family: 'Cairo', sans-serif;
+
+}
+
+
+.x{
+    position: absolute;
+    width: 100%;
+    height: 4%;
+    bottom: -4%;
+    border-top: 2px solid;
+}
+
+
+.x .title{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    text-transform: capitalize;
+    font-family: 'Cairo', sans-serif;
+
+}
+
+
+.x .labels{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Label */
+.x .labels .label{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
+
+.x .labels .label span{
+    position: absolute;
+    width: fit-content;
+    left: 85%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Dash */
+.x .labels .label::before{
+    content: "";
+    position: absolute;
+    width: 2%;
+    height: 40%;
+    background: black;
+    /* width / 2 */
+    right: -1%;
+    /* width + height */
+    top: -42%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.y{
+    position: absolute;
+    /* 2px: border height */
+    left: calc(-4% + 2px);
+    width: 4%;
+    height: 100%;
+    border-right: 2px solid;
+}
+
+
+.y .title{
+    position: absolute;
+    top: 50%;
+    text-transform: capitalize;
+    writing-mode: vertical-rl;
+    rotate: 180deg;
+    translate: 0 -50%;
+    left: -185%;
+    font-family: 'Cairo', sans-serif;
+
+}
+
+
+.y .labels{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+/* Label */
+.y .labels .label{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
+
+.y .labels .label span{
+    position: absolute;
+    top: -8%;
+    left: -50%;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 12345;
+}
+
+/* Dash */
+.y .labels .label::before{
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 2%;
+    background: black;
+    /* width + height */
+    right: -42%;
+    /* height */
+    top: -1%;
+}
+
+
+
+
+
+
+
+
+.points{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+
+.points .plot{
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    transform-origin: 0;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.points .diagonal-line{
+    position: absolute;
+    height: 2px;
+    transform-origin: 0;
+    border-radius: 15px;
+}
+
+@keyframes animate {
+    0%{
+        scale: 0.2;
+    }
+    100%{
+        scale: 1;
+    }
+}
