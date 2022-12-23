@@ -1,5 +1,5 @@
 # noSvgChart
-Pure html, css, js line chart without using svg.
+Basic **one dimensional** line chart using **pure** HTML, CSS, JS, without using svg.
 
 
 # What is a Line Chart? 
@@ -11,14 +11,13 @@ The chart have two axes:
 
 
 The result is each x value only has one y value e.g., each month have a *discrete* number of sales. i.e., it cannot be:
-- At 'July', we sold '20' hoodies, and '45' hoodies!
+- At 'July', we sold '20' hoodies, and at 'july', we sold '45' hoodies!
 
 Thus, You read the line chart:
 - At 'x' time we sold 'y' products.
 
 
 # About Linechart Plugin
-it's a basic **one dimensional** line chart using **pure** HTML, CSS, JS. 
 
 ## How it Works
     1. Partition the n y-axis values, into n intervals.
@@ -39,8 +38,8 @@ this chart functionallity is limited becuase no svg is used. Accordingly, the fo
 
     - X valus should be equal in distance(step). e.g., 10, 20, 30
     - X axis values should be no-numeric
-    - Numeric Values should be **positive**
-    - X & Y values should be **sorted**
+    - Numeric Values should be positive
+    - X & Y values should be sorted
     - X & Y length should be equal
 
 ## Implementation
