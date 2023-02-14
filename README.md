@@ -60,7 +60,7 @@ this chart functionallity is limited becuase no svg is used. Accordingly, the fo
             // y-axis
             y: {
                 values: [10, 20, 30, 40, 50],
-                label: "x axis tilte e.g., Payed Vouchers"
+                label: "y axis tilte e.g., Payed Vouchers"
             },
 
             // (x, y)
