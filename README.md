@@ -1,6 +1,8 @@
 # noSvgChart
 Basic **one dimensional** line chart using **pure** HTML, CSS, JS, without using svg.
 
+<img src="https://hussein112.github.io/Images/noSvgChart/demo.png">
+
 
 # What is a Line Chart? 
 line chart, is a type of charts used to visualize the value of something over time. For example, a company may plot the sales of a specific product over 1 year, month, day or week.
@@ -87,5 +89,5 @@ this chart functionallity is limited becuase no svg is used. Accordingly, the fo
     ```
 
 3. Instantiate class and give the above object as parameter.
-    - `const myChart = new lineChart(config);`
+    - `new lineChart(config);`
 4. Done !
