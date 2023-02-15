@@ -31,9 +31,6 @@ Thus, You read the line chart:
         - current y (Yn) and next y (Yn+1) will be the opposite side.
         - the hypotenuse (which will be calculated by pythagoras theorem) will be the line that connect the two points with X degree rotations.
 
-
-
-
 # IMPORTANT (PLEASE READ)
 
 this chart functionallity is limited becuase no svg is used. Accordingly, the following rules should be followed carefully:
@@ -45,11 +42,11 @@ this chart functionallity is limited becuase no svg is used. Accordingly, the fo
     - X & Y length should be equal
 
 ## Implementation
-1. Insert a `<div>` into you page with class "charts-container".
+> Download the or through <a href="#cdn">CDN</a>
+1. Insert a `<div>` into your page with class "charts-container".
 2. Configure the chart
 
     ```
-
         const config = {
             title: "Line Chart Title",
 
@@ -91,3 +88,13 @@ this chart functionallity is limited becuase no svg is used. Accordingly, the fo
 3. Instantiate class and give the above object as parameter.
     - `new lineChart(config);`
 4. Done !
+
+### <h3 id="cdn">CDN</h3>
+- JS: <br> 
+> ``<script src="https://cdn.jsdelivr.net/gh/hussein112/noSvgChart@1.0.0/main.js">``
+- JS Minified: <br> 
+> `` <script src="https://cdn.jsdelivr.net/gh/hussein112/noSvgChart@1.0.0/main.min.js"> ``
+- CSS: <br> 
+> `` <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hussein112/noSvgChart@1.0.0/style.css"> ``
+- JS Minified: <br> 
+> `` <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hussein112/noSvgChart@1.0.0/style.min.css"> ``
